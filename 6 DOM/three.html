@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body style="background-color: #212121;color: #fff;">
+    <ol class="language">
+        <li>Javascript</li>
+    </ol>
+</body>
+<script>
+    function AddLanguage(LangName) {
+        const li = document.createElement('li')
+        li.innerHTML = `${LangName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    AddLanguage("Pthon")
+    AddLanguage("HTML")
+
+    function AddOptLang(LangName){
+       const li = document.createElement('li')
+       const addTxt = li.appendChild(document.createTextNode(LangName))
+       document.querySelector('.language').appendChild(li)
+    }
+    AddOptLang("CSS")
+
+    //ReplaceWith
+    const secEle = document.querySelector('li:nth-child(2)')
+    const newEle = document.createElement('li')
+    newEle.textContent = "Java"
+    secEle.replaceWith(newEle)
+
+    const thirdEle = document.querySelector('li:nth-child(3)')
+    thirdEle.outerHTML = ' <li>Typescript</li> '
+
+    //remove
+    const lastEle = document.querySelector('li:last-child')
+    lastEle.remove()
+</script>
+</html>
